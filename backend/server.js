@@ -8,7 +8,7 @@ const multer = require("multer"),
     path = require("path");
 const mongoose = require("mongoose");
 const { router } = require("./routes.js");
-mongoose.connect("mongodb+srv://atik:1234@cluster0.qxnid.mongodb.net/test-thrift", {
+mongoose.connect("mongodb://127.0.0.1:27017/thrift", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 
@@ -543,6 +543,6 @@ const payloadinit = buff.toString("ascii");
 const payload = JSON.parse(payloadinit);
 console.log(payload);
 
-app.listen(2001,"172.104.191.159", () => {
+app.listen(2001, () => {
     console.log("Server is Runing On port 2001");
 });
