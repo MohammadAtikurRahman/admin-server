@@ -47,7 +47,7 @@ export default class Dashboard extends Component {
             });
         }
 
-        axios.get(`http://127.0.0.1:27017/api`)
+        axios.get(`http://172.104.191.159:2001/api`)
             .then(res => {
                 const persons = res.data;
                 this.setState({ persons });
@@ -67,7 +67,7 @@ export default class Dashboard extends Component {
 
 
             })
-        axios.get(`http://127.0.0.1:27017/user-details`)
+        axios.get(`http://172.104.191.159:2001/user-details`)
             .then(res => {
                 const upersons = res.data;
                 this.setState({ upersons });
@@ -103,7 +103,7 @@ export default class Dashboard extends Component {
         if (this.state.search) {
             data = `${data}&search=${this.state.search}`;
         }
-        axios.get(`http://127.0.0.1:27017/get-product${data}`, {
+        axios.get(`http://172.104.191.159:2001/get-product${data}`, {
             headers: {
                 'token': this.state.token
             }
@@ -121,7 +121,7 @@ export default class Dashboard extends Component {
 
 
     deleteProduct = (id) => {
-        axios.post('http://127.0.0.1:27017/delete-product', {
+        axios.post('http://172.104.191.159:2001/delete-product', {
             id: id
         }, {
             headers: {
@@ -180,7 +180,7 @@ export default class Dashboard extends Component {
         file.append('discount', this.state.discount);
         file.append('price', this.state.price);
 
-        axios.post('http://127.0.0.1:27017/add-product', file, {
+        axios.post('http://172.104.191.159:2001/add-product', file, {
             headers: {
                 'content-type': 'multipart/form-data',
                 'token': this.state.token
@@ -218,7 +218,7 @@ export default class Dashboard extends Component {
         file.append('discount', this.state.discount);
         file.append('price', this.state.price);
 
-        axios.post('http://127.0.0.1:27017/update-product', file, {
+        axios.post('http://172.104.191.159:2001/update-product', file, {
             headers: {
                 'content-type': 'multipart/form-data',
                 'token': this.state.token
@@ -614,7 +614,7 @@ export default class Dashboard extends Component {
 //   }
 
 //   componentDidMount() {
-//     axios.get(`http://127.0.0.1:27017/api`)
+//     axios.get(`http://172.104.191.159:2001/api`)
 //       .then(res => {
 //         const persons = res.data;
 //         this.setState({ persons });
