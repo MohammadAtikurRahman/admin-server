@@ -55,7 +55,7 @@ export default class Dashboard extends Component {
             });
         }
 
-        axios.get(`http://172.104.191.159:2001/user-details`).then((res) => {
+        axios.get(`http://172.104.191.159:2000/user-details`).then((res) => {
             const persons = res.data;
             this.setState({ persons });
             const userDetails = this.state.persons.payload;
@@ -81,7 +81,7 @@ export default class Dashboard extends Component {
             data = `${data}&search=${this.state.search}`;
         }
         axios
-            .get(`http://172.104.191.159:2001/get-product${data}`, {
+            .get(`http://172.104.191.159:2000/get-product${data}`, {
                 headers: {
                     token: this.state.token,
                 },
@@ -110,7 +110,7 @@ export default class Dashboard extends Component {
     deleteProduct = (id) => {
         axios
             .post(
-                "http://172.104.191.159:2001/delete-product",
+                "http://172.104.191.159:2000/delete-product",
                 {
                     id: id,
                 },
@@ -174,7 +174,7 @@ export default class Dashboard extends Component {
         file.append("price", this.state.price);
 
         axios
-            .post("http://172.104.191.159:2001/add-product", file, {
+            .post("http://172.104.191.159:2000/add-product", file, {
                 headers: {
                     "content-type": "multipart/form-data",
                     token: this.state.token,
@@ -223,7 +223,7 @@ export default class Dashboard extends Component {
         file.append("price", this.state.price);
 
         axios
-            .post("http://172.104.191.159:2001/update-product", file, {
+            .post("http://172.104.191.159:2000/update-product", file, {
                 headers: {
                     "content-type": "multipart/form-data",
                     token: this.state.token,
@@ -605,7 +605,7 @@ export default class Dashboard extends Component {
                                 <TableRow key={row.name}>
                                     <TableCell align="center">
                                         <img
-                                            src={`http://172.104.191.159:2001/${row.image}`}
+                                            src={`http://172.104.191.159:2000/${row.image}`}
                                             width="70"
                                             height="70"
                                         />
