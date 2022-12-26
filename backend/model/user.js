@@ -1,25 +1,47 @@
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
+const beneficiarySchema = new Schema(
+    {
+        name: String,  // done
+      
+        f_nm: String, //done
+        ben_nid: String, //done
+        sl: Number, //done
+        ben_id: Number, //done
+        m_nm: String,//done
+        age: Number,// done
+        dis: String,//done
+        sub_dis: String,// done
+        uni: String, // done
+        vill: String, // done
+        relgn: String,
+        job: String,
+        gen: String,
+        mob: Number,
+        pgm: String,
+        pass: Number,
+        bank: String,
+        branch: String,
+      
+        r_out: String,
 
-const beneficiarySchema = new Schema({
-	name: String ,
-	created_at: { type: Date, required: true, default: Date.now },
+        
+        mob_1: String,
+        mob_own:String,
 
-})
-
-const userSchema = new Schema({
-	username: String,
-	password: String,
-	country: String,
-	created_at: { type: Date, required: true, default: Date.now },
-	beneficiary: [beneficiarySchema]
-}),
-	
+        ben_sts: String,
+        nid_sts: String,
 
 
+        a_sts: String,
 
+        
+        u_nm: String,
+        dob: Date,
+        accre: Date,
+        f_allow: Date,
 
-user = mongoose.model('user', userSchema);
-
-module.exports = user;
+    },
+{ timestamps: true }
+);
